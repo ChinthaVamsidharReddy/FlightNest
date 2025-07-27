@@ -1,0 +1,14 @@
+body {
+ background: linear-gradient(to bottom right, rgba(230, 240, 255, 0.4), rgba(255, 255, 255, 0.3)),
+            url('assets/airport-bg.jpg') no-repeat center center fixed;
+
+  background-size: cover;
+  min-height: 100vh;
+}
+
+
+
+
+.card {
+  border: none;
+}

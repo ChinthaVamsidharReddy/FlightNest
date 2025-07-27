@@ -1,0 +1,44 @@
+<div class="container mt-4">
+  <app-back-button></app-back-button>
+
+  <h2 class="mb-4">Book a Flight</h2>
+
+  <form [formGroup]="bookingForm" (ngSubmit)="submitBooking()" novalidate>
+    <div class="mb-3">
+      <label for="flightId" class="form-label">Select Flight</label>
+      <select formControlName="flightId" class="form-select" id="flightId">
+        <option value="" disabled>Select a flight</option>
+        <option *ngFor="let flight of availableFlights" [value]="flight.id">
+          {{ flight.flightNumber }} - {{ flight.source }} → {{ flight.destination }}
+        </option>
+      </select>
+      <div *ngIf="bookingForm.get('flightId')?.touched && bookingForm.get('flightId')?.invalid" class="text-danger">
+        Please select a flight.
+      </div>
+    </div>
+
+    <div class="mb-3">
+      <label for="seats" class="form-label">Number of Seats</label>
+      <input type="number" formControlName="seats" id="seats" class="form-control" min="1" />
+      <div *ngIf="bookingForm.get('seats')?.touched && bookingForm.get('seats')?.invalid" class="text-danger">
+        Enter a valid number of seats.
+      </div>
+    </div>
+
+    <div class="mb-3">
+      <label for="bookingDate" class="form-label">Booking Date</label>
+      <input type="date" formControlName="bookingDate" class="form-control" [min]="today"/>
+    </div>
+
+    <button type="submit" class="btn btn-primary" [disabled]="submitting || bookingForm.invalid">
+      {{ submitting ? 'Booking...' : 'Book Flight' }}
+    </button>
+  </form>
+
+  <div *ngIf="successMessage" class="alert alert-success mt-3">
+    {{ successMessage }}
+  </div>
+  <div *ngIf="errorMessage" class="alert alert-danger mt-3">
+    {{ errorMessage }}
+  </div>
+</div>

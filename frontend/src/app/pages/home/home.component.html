@@ -1,0 +1,65 @@
+<div class="container py-5">
+
+  <!-- Logo -->
+  <div class="text-center mb-4">
+    <img src="assets/company-logo.png" alt="SimplyFly Logo" class="mb-3" style="height: 80px;">
+    <h1 class="fw-bold display-5">Welcome to <span class="text-primary">FlightNest</span></h1>
+    <p class="lead text-muted">Your portal to seamless flight booking and management</p>
+  </div>
+
+  <!-- Role Cards -->
+  <div class="row justify-content-center g-4">
+
+    <!-- User -->
+    <div class="col-md-4">
+      <div class="card border-0 shadow-lg h-100 rounded-4 hover-card">
+        <div class="text-center pt-4">
+          <img src="assets/user-logo.png" alt="User Logo" style="height: 60px;">
+        </div>
+        <div class="card-body text-center">
+          <h4 class="fw-bold text-primary mb-2">User</h4>
+          <p class="text-muted mb-4">Access your flight bookings and manage your profile.</p>
+          <a routerLink="/login/user" class="btn btn-outline-primary w-75 mb-2 rounded-pill">Login as User</a>
+          <a routerLink="/register/user" class="btn btn-primary w-75 rounded-pill">Register as User</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Admin -->
+    <div class="col-md-4">
+      <div class="card border-0 shadow-lg h-100 rounded-4 hover-card">
+        <div class="text-center pt-4">
+          <img src="assets/admin-logo.png" alt="Admin Logo" style="height: 60px;">
+        </div>
+        <div class="card-body text-center">
+          <h4 class="fw-bold text-secondary mb-2">Admin</h4>
+          <p class="text-muted mb-4">Manage all flights and maintain the system.</p>
+          <a routerLink="/login/admin" class="btn btn-outline-secondary w-75 mb-2 rounded-pill">Login as Admin</a>
+          <a routerLink="/register/admin" class="btn btn-secondary w-75 rounded-pill">Register as Admin</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Flight Owner -->
+    <div class="col-md-4">
+      <div class="card border-0 shadow-lg h-100 rounded-4 hover-card">
+        <div class="text-center pt-4">
+          <img src="assets/owner-logo.png" alt="Owner Logo" style="height: 60px;">
+        </div>
+        <div class="card-body text-center">
+          <h4 class="fw-bold text-success mb-2">Flight Owner</h4>
+          <p class="text-muted mb-4">Add your flights and view related bookings.</p>
+          <a routerLink="/login/owner" class="btn btn-outline-success w-75 mb-2 rounded-pill">Login as Owner</a>
+          <a routerLink="/register/owner" class="btn btn-success w-75 rounded-pill">Register as Owner</a>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- Footer -->
+  <footer class="mt-5 text-center text-muted small">
+    <hr class="my-4">
+    <p>&copy; 2025 FlightNest. All rights reserved.</p>
+  </footer>
+</div>

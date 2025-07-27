@@ -1,0 +1,14 @@
+.navbar .nav-link.active {
+  font-weight: 600;
+  border-bottom: 2px solid #ffffff;
+}
+
+.navbar .dropdown-menu {
+  animation: fadeIn 0.2s ease-in-out;
+  border-radius: 0.5rem;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(5px); }
+  to { opacity: 1; transform: translateY(0); }
+}

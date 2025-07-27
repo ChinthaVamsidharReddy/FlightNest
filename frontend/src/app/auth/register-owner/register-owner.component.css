@@ -1,0 +1,21 @@
+.card {
+  background: #ffffff;
+  border-radius: 1rem;
+}
+
+.form-control,
+.form-select {
+  border-radius: 0.5rem;
+  box-shadow: none;
+  transition: border-color 0.2s ease;
+}
+
+.form-control:focus,
+.form-select:focus {
+  border-color: #198754;
+  box-shadow: 0 0 0 0.15rem rgba(25, 135, 84, 0.25);
+}
+
+label {
+  color: #6c757d;
+}

@@ -1,0 +1,73 @@
+/* Main logo styling */
+.logo-main {
+  max-width: 180px;
+  height: auto;
+  animation: float-in 1s ease;
+}
+
+/* Role logos */
+.role-logo {
+  max-width: 80px;
+  height: auto;
+  transition: transform 0.3s ease;
+}
+
+.role-logo:hover {
+  transform: scale(1.1);
+}
+
+/* Hover effect on cards */
+.card-hover {
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.card-hover:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+/* Smooth button hover effect */
+.btn {
+  transition: background-color 0.3s, transform 0.2s;
+}
+
+.btn:hover {
+  transform: scale(1.02);
+}
+
+/* Simple float animation for logo */
+@keyframes float-in {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+footer {
+  padding-top: 10px;
+  padding-bottom: 20px;
+  font-size: 0.9rem;
+  color: #6c757d;
+}
+
+
+.hover-card {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.hover-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 0 30px rgba(0, 0, 0, 0.1);
+}
+
+.card-body .btn {
+  font-weight: 500;
+}
+
+img.logo-main {
+  height: 80px;
+}
+

@@ -1,0 +1,16 @@
+.card {
+  border-radius: 1rem;
+}
+
+.card-header {
+  font-weight: 600;
+  font-size: 1.1rem;
+}
+
+.btn i {
+  margin-right: 4px;
+}
+
+.table th, .table td {
+  vertical-align: middle;
+}

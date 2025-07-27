@@ -1,0 +1,97 @@
+<div class="container my-5">
+  <app-back-button></app-back-button>
+  <button class="btn btn-outline-danger float-end mb-3" (click)="logout()">
+    <i class="bi bi-box-arrow-right"></i> Logout
+  </button>
+
+  <!-- Profile Section -->
+  <div class="card shadow-sm border-0 rounded-4 mb-5 bg-light">
+    <div class="card-body p-4">
+      <h3 class="text-center text-secondary fw-bold mb-4">Admin Profile</h3>
+
+      <form [formGroup]="profileForm" *ngIf="profile">
+        <div class="row g-3">
+          <div class="col-md-6">
+            <label class="form-label fw-medium">Full Name</label>
+            <input type="text" class="form-control" formControlName="fullName" [readonly]="!editMode" />
+          </div>
+
+          <div class="col-md-6">
+            <label class="form-label fw-medium">Phone</label>
+            <input type="text" class="form-control" formControlName="phone" [readonly]="!editMode" />
+          </div>
+
+          <div class="col-md-6">
+            <label class="form-label fw-medium">Address</label>
+            <input type="text" class="form-control" formControlName="address" [readonly]="!editMode" />
+          </div>
+
+          <div class="col-md-6">
+            <label class="form-label fw-medium">Gender</label>
+            <input type="text" class="form-control" formControlName="gender" [readonly]="!editMode" />
+          </div>
+
+          <div class="col-md-6">
+            <label class="form-label fw-medium">Date of Birth</label>
+            <input type="date" class="form-control" formControlName="dateOfBirth" [readonly]="!editMode" />
+          </div>
+
+          <div class="col-md-6">
+            <label class="form-label fw-medium">Country</label>
+            <input type="text" class="form-control" formControlName="country" [readonly]="!editMode" />
+          </div>
+        </div>
+
+        <div class="mt-4 text-center">
+          <button *ngIf="!editMode" class="btn btn-secondary px-4" (click)="enableEdit()">Edit Profile</button>
+
+          <div *ngIf="editMode">
+            <button class="btn btn-success me-2 px-4" (click)="saveProfile()">Save</button>
+            <button class="btn btn-outline-secondary px-4" (click)="cancelEdit()">Cancel</button>
+          </div>
+        </div>
+      </form>
+
+      <div *ngIf="successMessage" class="alert alert-success mt-3 text-center">{{ successMessage }}</div>
+      <div *ngIf="errorMessage" class="alert alert-danger mt-3 text-center">{{ errorMessage }}</div>
+    </div>
+  </div>
+
+  <!-- Flights Section -->
+  <div class="card shadow-sm border-0 rounded-4 bg-light">
+    <div class="card-body p-4">
+      <h3 class="text-center text-secondary fw-bold mb-4">All Flight Details</h3>
+
+      <table class="table table-hover table-bordered align-middle" *ngIf="flights.length">
+        <thead class="table-secondary text-center">
+          <tr>
+            <th>ID</th>
+            <th>Flight No.</th>
+            <th>Airline</th>
+            <th>Source</th>
+            <th>Destination</th>
+            <th>Departure</th>
+            <th>Arrival</th>
+            <th>Seats</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let flight of flights" class="text-center">
+            <td>{{ flight.id }}</td>
+            <td>{{ flight.flightNumber }}</td>
+            <td>{{ flight.airlineName }}</td>
+            <td>{{ flight.source }}</td>
+            <td>{{ flight.destination }}</td>
+            <td>{{ flight.departureTime | date: 'short' }}</td>
+            <td>{{ flight.arrivalTime | date: 'short' }}</td>
+            <td>{{ flight.totalSeats }}</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <div *ngIf="flights.length === 0" class="alert alert-info text-center mt-3">
+        No flights available.
+      </div>
+    </div>
+  </div>
+</div>

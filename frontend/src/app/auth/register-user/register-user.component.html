@@ -1,0 +1,105 @@
+<div class="container mt-5 mb-5">
+  <app-back-button></app-back-button>
+
+  <!-- Registration Card -->
+  <div class="card shadow-lg border-0 rounded-4 bg-light">
+    <div class="card-body p-4">
+      <h2 class="mb-4 text-primary text-center fw-bold">User Registration</h2>
+
+      <form [formGroup]="registerForm" (ngSubmit)="onSubmit()" class="row g-4">
+
+        <!-- Username -->
+        <div class="col-md-6 form-floating">
+          <input id="username" class="form-control" formControlName="username" placeholder="Username" />
+          <label for="username">Username</label>
+          <div class="text-danger mt-1" *ngIf="registerForm.get('username')?.touched && registerForm.get('username')?.invalid">
+            Username is required.
+          </div>
+        </div>
+
+        <!-- Password -->
+        <div class="col-md-6 form-floating">
+          <input id="password" type="password" class="form-control" formControlName="password" placeholder="Password" />
+          <label for="password">Password</label>
+          <div class="text-danger mt-1" *ngIf="registerForm.get('password')?.touched && registerForm.get('password')?.invalid">
+            Password is required.
+          </div>
+        </div>
+
+        <!-- Email -->
+        <div class="col-md-6 form-floating">
+          <input id="email" type="email" class="form-control" formControlName="email" placeholder="Email" />
+          <label for="email">Email</label>
+          <div class="text-danger mt-1" *ngIf="registerForm.get('email')?.touched && registerForm.get('email')?.invalid">
+            A valid email is required.
+          </div>
+        </div>
+
+        <!-- Full Name -->
+        <div class="col-md-6 form-floating">
+          <input id="fullName" class="form-control" formControlName="fullName" placeholder="Full Name" />
+          <label for="fullName">Full Name</label>
+          <div class="text-danger mt-1" *ngIf="registerForm.get('fullName')?.touched && registerForm.get('fullName')?.invalid">
+            Full name is required.
+          </div>
+        </div>
+
+        <!-- Phone -->
+        <div class="col-md-6 form-floating">
+          <input id="phone" class="form-control" formControlName="phone" placeholder="Phone" />
+          <label for="phone">Phone</label>
+          <div class="text-danger mt-1" *ngIf="registerForm.get('phone')?.touched && registerForm.get('phone')?.invalid">
+            Phone is required.
+          </div>
+        </div>
+
+        <!-- Address -->
+        <div class="col-md-6 form-floating">
+          <input id="address" class="form-control" formControlName="address" placeholder="Address" />
+          <label for="address">Address</label>
+          <div class="text-danger mt-1" *ngIf="registerForm.get('address')?.touched && registerForm.get('address')?.invalid">
+            Address is required.
+          </div>
+        </div>
+
+        <!-- Gender -->
+        <div class="col-md-6 form-floating">
+          <select id="gender" class="form-select" formControlName="gender">
+            <option value="" disabled>Select Gender</option>
+            <option value="MALE">Male</option>
+            <option value="FEMALE">Female</option>
+            <option value="OTHER">Other</option>
+          </select>
+          <label for="gender">Gender</label>
+          <div class="text-danger mt-1" *ngIf="registerForm.get('gender')?.touched && registerForm.get('gender')?.invalid">
+            Gender is required.
+          </div>
+        </div>
+
+        <!-- Date of Birth -->
+        <div class="col-md-6 form-floating">
+          <input id="dob" type="date" class="form-control" formControlName="dateOfBirth" placeholder="Date of Birth" />
+          <label for="dob">Date of Birth</label>
+          <div class="text-danger mt-1" *ngIf="registerForm.get('dateOfBirth')?.touched && registerForm.get('dateOfBirth')?.invalid">
+            Date of birth is required.
+          </div>
+        </div>
+
+        <!-- Country -->
+        <div class="col-md-6 form-floating">
+          <input id="country" class="form-control" formControlName="country" placeholder="Country" />
+          <label for="country">Country</label>
+          <div class="text-danger mt-1" *ngIf="registerForm.get('country')?.touched && registerForm.get('country')?.invalid">
+            Country is required.
+          </div>
+        </div>
+
+        <!-- Submit Button -->
+        <div class="col-12 text-center mt-3">
+          <button type="submit" class="btn btn-primary px-5 py-2 fw-semibold">Register</button>
+          <div class="text-danger mt-2" *ngIf="errorMessage">{{ errorMessage }}</div>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,42 @@
+<div class="container mt-5 mb-5">
+  <app-back-button></app-back-button>
+
+  <!-- Login Card -->
+  <div class="card shadow-lg border-0 rounded-4 col-md-6 mx-auto bg-light">
+    <div class="card-body p-4">
+      <h2 class="mb-4 text-success text-center fw-bold">Flight Owner Login</h2>
+
+      <form [formGroup]="loginForm" (ngSubmit)="onSubmit()" class="row g-4">
+
+        <!-- Username -->
+        <div class="form-floating">
+          <input id="username" type="text" class="form-control" formControlName="username" placeholder="Username" />
+          <label for="username">Username</label>
+          <div class="text-danger mt-1" *ngIf="loginForm.get('username')?.touched && loginForm.get('username')?.invalid">
+            Username is required
+          </div>
+        </div>
+
+        <!-- Password -->
+        <div class="form-floating">
+          <input id="password" type="password" class="form-control" formControlName="password" placeholder="Password" />
+          <label for="password">Password</label>
+          <div class="text-danger mt-1" *ngIf="loginForm.get('password')?.touched && loginForm.get('password')?.invalid">
+            Password is required
+          </div>
+        </div>
+
+        <!-- Error Message -->
+        <div class="text-danger text-center" *ngIf="errorMessage">
+          {{ errorMessage }}
+        </div>
+
+        <!-- Submit -->
+        <div class="text-center">
+          <button type="submit" class="btn btn-success px-5 py-2 fw-semibold">Login</button>
+        </div>
+
+      </form>
+    </div>
+  </div>
+</div>
